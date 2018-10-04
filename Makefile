@@ -71,7 +71,7 @@ vmware: .dapper
 custom: COMON_APPEND = rancher.cloud_init.datasources=http://192.168.1.18:25031/cloud-init.yml
 custom: .dapper
         mkdir -p dist
-        APPEND="rancher.state.autoformat=[/dev/sda,/dev/vda] rancher.state.dev=LABEL=RANCHER_STATE ${COMON_APPEND}" ./.dapper default
+        APPEND="rancher.state.dev=LABEL=RANCHER_STATE ${COMON_APPEND}" ./.dapper default
         APPEND="${COMON_APPEND}" INTEGRATION_TESTS=0 ./.dapper vmware-release 2>&1 | tee dist/release.log
 
 help:
