@@ -74,7 +74,7 @@ rancher:
   console: default
   cloud_init:
     datasources:
-    - configdrive:/media/config-2
+    - {{.CLOUD_INIT_DEFAULT}}
   repositories:
     core:
       url: {{.OS_SERVICES_REPO}}/{{.REPO_VERSION}}
